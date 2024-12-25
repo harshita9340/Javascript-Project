@@ -61,3 +61,16 @@ form.addEventListener('submit',function(e){
 });
 
 ```
+## project-3
+
+```javascript
+
+const clock=document.getElementById('clock')
+//also use a queryselector
+setInterval(function(){
+let date=new Date();
+//har moment pe run ho 
+clock.innerHTML=date.toLocaleTimeString();
+},1000)
+```
+
