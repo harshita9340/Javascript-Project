@@ -9,7 +9,7 @@
 
 #solution code
 
-##project 1 COLOR CHANGER
+##project-1 (COLOR CHANGER)
 
 ```javascript
 console.log("project-1")
@@ -36,7 +36,7 @@ if(e.targetgrey.id==='yellow'){
 
 });
 ```
-##project 2 BMI CALCULATOR
+##project 2 (BMI CALCULATOR)
 
 ```javascript
 const form =document.querySelector('form');
@@ -169,5 +169,58 @@ function newGame() {
     playGame = true;
   });
 }
+```
+##project-5(keypress)
 
+```javascript
+
+const insert=document.getElementById('insert')
+window.addEventListener('keydown',(e)=>{
+  insert.innerHTML=`
+  <div class='color'>
+  <table>
+  <tr>
+    <th>key</th>
+    <th>Keycode</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td>${e.key===" "?"space":e.key}</td>
+    <td>${e.keycode}</td>
+    <td>${e.code}</td>
+  </tr>h
+</table>
+
+  </div>
+  `
+})
+```
+##project-6(BackgroundChanger)
+
+```javascript
+
+//generate a random color
+const randomColor = function(){
+  const hex="0123456789ABCDEF"
+  let color='#'
+  for(let i=0;i<6;i++){
+    color+=hex[Math.floor(Math.random()*16)];
+  }
+  return color;
+}
+let interval;
+const startChangingColor=function(){
+  if(!interval){
+   interval=setInterval(changebg,1000)
+  }
+  function changebg(){
+    document.body.style.backgroundColor=randomColor();
+  }
+}
+const stopChangingColor=function(){
+clearInterval(interval)
+interval=null;
+}
+document.querySelector('#start').addEventListener('click',startChangingColor)
+document.querySelector('#stop').addEventListener('click',stopChangingColor)
 ```
